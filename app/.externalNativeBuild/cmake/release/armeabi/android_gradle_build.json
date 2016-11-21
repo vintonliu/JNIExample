@@ -1,0 +1,38 @@
+
+{
+	"buildFiles" : [ "E:/StudioProjects/JNIExample/app/CMakeLists.txt" ],
+	"cleanCommands" : 
+	[
+		"D:\\Android\\sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build E:\\StudioProjects\\JNIExample\\app\\.externalNativeBuild\\cmake\\release\\armeabi --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"jniexample-Release-armeabi" : 
+		{
+			"abi" : "armeabi",
+			"artifactName" : "jniexample",
+			"buildCommand" : "D:\\Android\\sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build E:\\StudioProjects\\JNIExample\\app\\.externalNativeBuild\\cmake\\release\\armeabi --target jniexample",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  -target armv5te-none-linux-androideabi -gcc-toolchain D:/android-ndk-r13b/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64 --sysroot=D:/android-ndk-r13b/platforms/android-15/arch-arm  -Djniexample_EXPORTS -isystem D:\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include -isystem D:\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\armeabi\\include -isystem D:\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include\\backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv5te -mtune=xscale -msoft-float -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv5te -mtune=xscale -msoft-float -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti  -Os -DNDEBUG -Os -DNDEBUG  -fPIC    -c ",
+					"src" : "E:/StudioProjects/JNIExample/app/src/main/cpp/JNIExample.cpp",
+					"workingDirectory" : "E:/StudioProjects/JNIExample/app/.externalNativeBuild/cmake/release/armeabi"
+				}
+			],
+			"output" : "E:/StudioProjects/JNIExample/app/build/intermediates/cmake/release/obj/armeabi/libjniexample.so",
+			"toolchain" : "3601291625"
+		}
+	},
+	"toolchains" : 
+	{
+		"3601291625" : 
+		{
+			"cCompilerExecutable" : "D:/android-ndk-r13b/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "D:/android-ndk-r13b/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}

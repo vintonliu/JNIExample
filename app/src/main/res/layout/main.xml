@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<TextView android:id="@+id/callVoid_text"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:text=""
+    />
+<Button android:id="@+id/callVoid_button"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Call callVoid()"
+    />
+<TextView android:id="@+id/getNewData_text"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" 
+    android:gravity="center_horizontal"
+    android:text=""
+    />
+<Button android:id="@+id/getNewData_button"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Call getNewData()"
+    />
+<TextView android:id="@+id/getDataString_text"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" 
+    android:gravity="center_horizontal"
+    android:text=""
+    />
+<Button android:id="@+id/getDataString_button"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Call getDataString()"
+    />
+</LinearLayout>

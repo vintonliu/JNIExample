@@ -1,0 +1,38 @@
+
+{
+	"buildFiles" : [ "E:/StudioProjects/JNIExample/app/CMakeLists.txt" ],
+	"cleanCommands" : 
+	[
+		"D:\\Android\\sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build E:\\StudioProjects\\JNIExample\\app\\.externalNativeBuild\\cmake\\debug\\mips --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"jniexample-Debug-mips" : 
+		{
+			"abi" : "mips",
+			"artifactName" : "jniexample",
+			"buildCommand" : "D:\\Android\\sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build E:\\StudioProjects\\JNIExample\\app\\.externalNativeBuild\\cmake\\debug\\mips --target jniexample",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  -target mipsel-none-linux-android -gcc-toolchain D:/android-ndk-r13b/toolchains/mipsel-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=D:/android-ndk-r13b/platforms/android-15/arch-mips  -Djniexample_EXPORTS -isystem D:\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include -isystem D:\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\mips\\include -isystem D:\\android-ndk-r13b\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include\\backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "E:/StudioProjects/JNIExample/app/src/main/cpp/JNIExample.cpp",
+					"workingDirectory" : "E:/StudioProjects/JNIExample/app/.externalNativeBuild/cmake/debug/mips"
+				}
+			],
+			"output" : "E:/StudioProjects/JNIExample/app/build/intermediates/cmake/debug/obj/mips/libjniexample.so",
+			"toolchain" : "3601291625"
+		}
+	},
+	"toolchains" : 
+	{
+		"3601291625" : 
+		{
+			"cCompilerExecutable" : "D:/android-ndk-r13b/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "D:/android-ndk-r13b/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}
