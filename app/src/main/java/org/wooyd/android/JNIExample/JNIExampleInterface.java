@@ -8,6 +8,8 @@ import android.util.Log;
 
 import org.wooyd.android.JNIExample.Data;
 
+import java.util.ArrayList;
+
 public class JNIExampleInterface {
     static Handler h;
     public JNIExampleInterface() {}
@@ -31,4 +33,6 @@ public class JNIExampleInterface {
     public static native VideoPresetAdapter getPresetData();
     public static native int getVideoPresetData(VideoPresetAdapter data);
     public static native int setPresetData(VideoPresetAdapter data);
+    public static native int getDataList(ArrayList<Data> dataList);
+    public static native int setDataList(ArrayList<Data> dataList);
 }

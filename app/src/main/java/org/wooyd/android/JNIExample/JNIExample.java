@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
+import java.util.ArrayList;
 import java.util.zip.*;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -23,6 +24,7 @@ public class JNIExample extends Activity {
     TextView callVoidText, getNewDataText, getDataStringText;
     Button callVoidButton, getNewDataButton, getDataStringButton, getPresetDataButton;
     Button setPresetDataButton;
+    Button getDataList, setDataList;
     Handler callbackHandler;
     JNIExampleInterface jniInterface;
 
@@ -162,8 +164,7 @@ public class JNIExample extends Activity {
                         + " " + preset.low.complexity_w360
                         + " " + preset.low.complexity_w480);
 
-                if (jniInterface.setPresetData(preset) > 0)
-                {
+                if (jniInterface.setPresetData(preset) > 0) {
                     Log.i("JNIExample", "setPresetData success");
                     VideoPresetAdapter presetData = jniInterface.getPresetData();
                     Log.i("JNIExample", "Jni getPresetData()");
@@ -172,6 +173,33 @@ public class JNIExample extends Activity {
                             + " " + presetData.low.complexity_w360
                             + " " + presetData.low.complexity_w480);
                 }
+            }
+        });
+
+        getDataList = (Button) findViewById(R.id.getDataList_button);
+        getDataList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<Data> dataList = new ArrayList();
+                        jniInterface.getDataList(dataList);
+                for (int i = 0; i < dataList.size(); i++) {
+                    Data data = dataList.get(i);
+                    Log.i("JNIExample", "idx: " + i + " Data: " + data.i + " " + data.s);
+                }
+            }
+        });
+
+        setDataList = (Button) findViewById(R.id.setDataList_button);
+        setDataList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList dataList = new ArrayList();
+                for (int i = 0; i < 3; i++) {
+                    Data data = new Data(10 + i, "foo " + i * 10);
+                    dataList.add(data);
+                }
+
+                jniInterface.setDataList(dataList);
             }
         });
     }

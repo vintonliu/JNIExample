@@ -56,4 +56,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Call setPresetData()" />
+
+    <Button
+        android:id="@+id/getDataList_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Call getDataList()" />
+
+    <Button
+        android:id="@+id/setDataList_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Call setDataList()" />
 </LinearLayout>

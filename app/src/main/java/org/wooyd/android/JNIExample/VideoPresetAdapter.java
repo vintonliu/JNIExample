@@ -9,7 +9,7 @@ public class VideoPresetAdapter {
     public VideoPresetMediumCpu medium;
     public VideoPresetHighCpu high;
 
-    public class VideoPresetLowCpu {
+    class VideoPresetLowCpu {
         public int complexity_w240;
         public int complexity_w360;
         public int complexity_w480;
@@ -29,7 +29,7 @@ public class VideoPresetAdapter {
         }
     }
 
-    public class VideoPresetMediumCpu {
+    class VideoPresetMediumCpu {
         public int complexity_w240;
         public int complexity_w360;
         public int complexity_w480;
@@ -49,7 +49,7 @@ public class VideoPresetAdapter {
         }
     }
 
-    public class VideoPresetHighCpu {
+    class VideoPresetHighCpu {
         public int complexity_w240;
         public int complexity_w360;
         public int complexity_w480;

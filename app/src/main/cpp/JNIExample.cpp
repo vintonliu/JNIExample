@@ -4,6 +4,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <pthread.h>
+#include <stdio.h>
 
 #define DEBUG
 #ifdef DEBUG
@@ -477,6 +478,62 @@ JNIEXPORT jstring JNICALL Java_org_wooyd_android_JNIExample_JNIExampleInterface_
     jstring dataStringValue = (jstring) env->GetObjectField(
         dataObject, dataStringField);
     return dataStringValue;
+}
+
+JNIEXPORT jint JNICALL Java_org_wooyd_android_JNIExample_JNIExampleInterface_getDataList
+        (JNIEnv *env, jclass cls, jobject dataList) {
+    jclass listCls = (env)->GetObjectClass(dataList);
+    // find method in ArrayList class
+    jmethodID listAdd = (env)->GetMethodID(listCls, "add", "(Ljava/lang/Object;)Z");
+
+    jclass dataCls = (env)->FindClass(kDataPath);
+    jmethodID dataConstruct = (env)->GetMethodID(dataCls, "<init>", "(ILjava/lang/String;)V");
+
+    for (int i = 0; i < 3; ++i) {
+        char tmp[32] = {0};
+        sprintf(tmp, "bar %d", i + 10);
+        jstring str = (env)->NewStringUTF(tmp);
+
+        // new data object
+        jobject dataObj = (env)->NewObject(dataCls, dataConstruct, i + 10, str);
+
+        // add data to list
+        (env)->CallBooleanMethod(dataList, listAdd, dataObj);
+    }
+
+    return 0;
+}
+
+JNIEXPORT jint JNICALL Java_org_wooyd_android_JNIExample_JNIExampleInterface_setDataList
+        (JNIEnv *env, jclass cls, jobject dataList) {
+    jclass listCls = (env)->GetObjectClass(dataList);
+    // find method in ArrayList class
+    jmethodID listGet = (env)->GetMethodID(listCls, "get", "(I)Ljava/lang/Object;");
+    jmethodID listSize = (env)->GetMethodID(listCls, "size", "()I");
+
+    jint size = (env)->CallIntMethod(dataList, listSize);
+    LOGI("setDataList: size = %d", size);
+
+    for(int i = 0; i < size; i++)
+    {
+        jobject dataObject = (env)->CallObjectMethod(dataList, listGet, i);
+        jclass dataCls = (env)->GetObjectClass(dataObject);
+
+        jfieldID no = (env)->GetFieldID(dataCls, "i", "I");
+        jfieldID str = (env)->GetFieldID(dataCls, "s", "Ljava/lang/String;");
+
+        if (!str)
+        {
+            LOGE("setDataList: failed to get fileld ID");
+            return -1;
+        }
+        int value = (int)(env)->GetIntField(dataObject, no);
+        jstring dataStr = (jstring) (env)->GetObjectField(dataObject, str);
+        const char *s = dataStr ? (env)->GetStringUTFChars(dataStr, NULL) : NULL;
+        LOGI("setDataList: idx = %d no = %d s = %s", value, no, s);
+    }
+
+    return 0;
 }
 
 void initClassHelper(JNIEnv *env, const char *path, jobject *objptr) {
